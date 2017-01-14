@@ -1,0 +1,29 @@
+{
+  "name": "@emmetio/node",
+  "version": "0.1.0",
+  "description": "Emmet abbreviation node",
+  "main": "dist/node.cjs.js",
+  "module": "dist/node.es.js",
+  "scripts": {
+    "test": "mocha",
+    "build": "rollup -c",
+    "prepublish": "npm run test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmetio/node.git"
+  },
+  "keywords": [],
+  "author": "Sergey Chikuyonok <serge.che@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emmetio/emmet/issues"
+  },
+  "homepage": "https://github.com/emmetio/node#readme",
+  "devDependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-register": "^6.18.0",
+    "mocha": "^3.2.0",
+    "rollup": "^0.41.4"
+  }
+}
