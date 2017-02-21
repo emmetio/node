@@ -160,11 +160,6 @@ describe('Node', () => {
 		assert(!a.hasClass('baz'));
 		assert.deepEqual(a.attributesMap, {'class': 'foo bar'});
 
-		// Empty classes
-		a.addClass(' ');
-		a.addClass('');
-		assert.deepEqual(a.attributesMap, {'class': 'foo bar'});
-
 		a.removeClass('foo');
 		a.removeClass('baz');
 		assert.deepEqual(a.attributesMap, {'class': 'bar'});
@@ -173,6 +168,20 @@ describe('Node', () => {
 		assert(b.hasClass('foo'));
 		assert(b.hasClass('bar'));
 	});
+
+    it('empty class names', () => {
+        const a = new Node('a');
+		assert.equal(a.attributes.length, 0);
+
+        // Adding empty class should at least create `class` attribute
+		a.addClass('');
+        assert.deepEqual(a.attributesMap, {'class': ''});
+
+		a.addClass('foo');
+		a.addClass(' ');
+		a.addClass('');
+		assert.deepEqual(a.attributesMap, {'class': 'foo'});
+    });
 
 	it('clone', () => {
 		const a = new Node('a', [

@@ -221,7 +221,10 @@ export default class Node {
 	 */
 	addClass(token) {
 		token = normalize(token);
-		if (token && !this.hasClass(token)) {
+
+		if (!this.hasAttribute('class')) {
+			this.setAttribute('class', token);
+		} else if (token && !this.hasClass(token)) {
 			this.setAttribute('class', this.classList.concat(token).join(' '));
 		}
 	}
