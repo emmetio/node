@@ -1,6 +1,6 @@
 {
   "name": "@emmetio/node",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Emmet abbreviation node",
   "main": "dist/node.cjs.js",
   "module": "dist/node.es.js",
