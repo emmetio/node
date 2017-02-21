@@ -160,6 +160,11 @@ describe('Node', () => {
 		assert(!a.hasClass('baz'));
 		assert.deepEqual(a.attributesMap, {'class': 'foo bar'});
 
+		// Empty classes
+		a.addClass(' ');
+		a.addClass('');
+		assert.deepEqual(a.attributesMap, {'class': 'foo bar'});
+
 		a.removeClass('foo');
 		a.removeClass('baz');
 		assert.deepEqual(a.attributesMap, {'class': 'bar'});
